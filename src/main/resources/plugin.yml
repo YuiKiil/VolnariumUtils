@@ -1,0 +1,5 @@
+name: VolnariumUtils
+version: '${version}'
+main: fr.girlstream.volnariumutils.Main
+api-version: 1.17
+author: GirlStream
