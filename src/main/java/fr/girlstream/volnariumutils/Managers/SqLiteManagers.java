@@ -1,5 +1,7 @@
 package fr.girlstream.volnariumutils.Managers;
 
+import org.bukkit.entity.Player;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -40,9 +42,13 @@ public class SqLiteManagers {
         }
 
         Statement statement = this.connection.createStatement();
-        statement.executeUpdate("CREATE TABLE IF NOT EXISTS player (id_player INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, datetime DATETIME)");
+        statement.executeUpdate("CREATE TABLE IF NOT EXISTS player (id_player TEXT PRIMARY KEY, name TEXT, datetime DATETIME)");
         statement.executeUpdate("CREATE TABLE IF NOT EXISTS rank (rank TEXT PRIMARY KEY, perm TEXT, cooldown INTEGER)");
         statement.close();
+    }
+
+    public boolean isPlayerExist(Player player){
+
     }
 
     public Connection getConnection() {
